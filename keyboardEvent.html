@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>KeyboardEvent</title>
+</head>
+<style>
+    html {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100%;
+        background: rgb(255, 191, 128);
+        text-align: center;
+        font-family: monospace;
+        line-height: 1.4;
+        font-size: 25px;
+    }
+</style>
+
+<body>
+    <p>Press any key on the keyboard to get the information of the pressed key.</p>
+    <script>
+        window.addEventListener("keydown", function(event) {
+            console.log(event);
+
+            document.body.innerHTML = `
+                &nbsp;&nbsp;&nbsp;
+                <b>key: ${event.key}</b>
+                <br>
+                &nbsp;&nbsp;
+                <b>which: ${event.which}</b>
+                <br>
+                <b>keyCode:</b> ${event.keyCode}
+                <br>&nbsp;&nbsp;
+                <b>shiftKey:</b> ${event.shiftKey}
+                </br>&nbsp;&nbsp;&nbsp;&nbsp;
+                <b>altKey:</b> ${event.altKey}
+                <br>&nbsp;&nbsp;&nbsp;
+                <b>ctrlKey:</b> ${event.ctrlKey}
+                <br>&nbsp;&nbsp;
+                <b>metaKey:</b> ${event.metaKey}
+            `;
+        }, true);
+    </script>
+</body>
+
+</html>
